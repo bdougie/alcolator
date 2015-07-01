@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hdM-2s-e3P">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -18,20 +18,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aot-v9-VrR">
-                                <rect key="frame" x="231.5" y="137" width="59" height="30"/>
+                                <rect key="frame" x="232" y="137" width="59" height="30"/>
                                 <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="15"/>
                                 <state key="normal" title="Calculate">
                                     <color key="titleColor" red="0.96964316849931897" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MzN-n5-fFI"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="% Alchohol Content Per Beer" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hSQ-3M-PzL">
                                 <rect key="frame" x="16" y="20" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="4U6-k1-xHt"/>
+                                    <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Dld-TR-JxZ"/>
+                                </connections>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="hnl-wU-gTe">
                                 <rect key="frame" x="19" y="72" width="567" height="31"/>
+                                <connections>
+                                    <action selector="sliderDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="0fI-3s-chu"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqL-yb-bVE">
                                 <rect key="frame" x="37" y="197" width="539" height="19"/>
@@ -43,6 +53,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="aot-v9-VrR" firstAttribute="width" secondItem="LqL-yb-bVE" secondAttribute="width" id="0IR-0e-6wL"/>
                             <constraint firstItem="LqL-yb-bVE" firstAttribute="top" secondItem="aot-v9-VrR" secondAttribute="bottom" constant="30" id="3yF-xI-SRx"/>
                             <constraint firstItem="hSQ-3M-PzL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6YN-7W-gc6"/>
                             <constraint firstItem="aot-v9-VrR" firstAttribute="top" secondItem="hnl-wU-gTe" secondAttribute="bottom" constant="35" id="9Qi-i0-8v3"/>
@@ -61,16 +72,106 @@
                             <mask key="constraints">
                                 <exclude reference="neD-qD-sr4"/>
                                 <exclude reference="vUP-Bh-f66"/>
+                                <exclude reference="0IR-0e-6wL"/>
                             </mask>
                         </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="hEH-61-Gub" appends="YES" id="p2u-HN-4Q8"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="beerCountSlider" destination="hnl-wU-gTe" id="3Xt-cM-v6m"/>
+                        <outlet property="resultLabel" destination="LqL-yb-bVE" id="c7L-VP-vzG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="hEH-61-Gub"/>
+                <tapGestureRecognizer id="hEH-61-Gub">
+                    <connections>
+                        <action selector="tapGestureDidFire:" destination="BYZ-38-t0r" id="6EM-x1-1xa"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="414" y="378"/>
+        </scene>
+        <!--Whiskey View Controller-->
+        <scene sceneID="InT-yc-uvI">
+            <objects>
+                <viewController id="hdM-2s-e3P" customClass="WhiskeyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Km-E8-g4v"/>
+                        <viewControllerLayoutGuide type="bottom" id="sqV-TG-g26"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nvR-t5-tmk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tV9-jC-que">
+                                <rect key="frame" x="232" y="137" width="59" height="30"/>
+                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="15"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" red="0.96964316849999999" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="hdM-2s-e3P" eventType="touchUpInside" id="6GC-87-8fr"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="% Alchohol Content Per Beer" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NWT-Pl-KYn">
+                                <rect key="frame" x="16" y="20" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="hdM-2s-e3P" eventType="editingChanged" id="VaM-3l-fFe"/>
+                                    <action selector="textFieldDidChange:" destination="hdM-2s-e3P" eventType="editingDidEnd" id="wPm-fL-P9s"/>
+                                </connections>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="M51-0C-uOX">
+                                <rect key="frame" x="19" y="72" width="567" height="31"/>
+                                <connections>
+                                    <action selector="sliderDidChange:" destination="hdM-2s-e3P" eventType="valueChanged" id="76x-JL-g4Y"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gix-KA-5Ib">
+                                <rect key="frame" x="37" y="197" width="539" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" red="0.21037214770000001" green="0.53598484850000006" blue="0.43387750050000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="gix-KA-5Ib" firstAttribute="top" secondItem="tV9-jC-que" secondAttribute="bottom" constant="34" id="1hN-aW-r0I"/>
+                            <constraint firstItem="NWT-Pl-KYn" firstAttribute="trailing" secondItem="nvR-t5-tmk" secondAttribute="trailingMargin" id="2gO-do-SqU"/>
+                            <constraint firstItem="M51-0C-uOX" firstAttribute="width" secondItem="NWT-Pl-KYn" secondAttribute="width" constant="-5" id="5Py-0e-Bsj"/>
+                            <constraint firstItem="tV9-jC-que" firstAttribute="width" secondItem="gix-KA-5Ib" secondAttribute="width" id="9j7-hj-OTT"/>
+                            <constraint firstItem="tV9-jC-que" firstAttribute="centerX" secondItem="M51-0C-uOX" secondAttribute="centerX" constant="-41.5" id="Gf7-4e-GqA"/>
+                            <constraint firstItem="gix-KA-5Ib" firstAttribute="leading" secondItem="nvR-t5-tmk" secondAttribute="leadingMargin" constant="21" id="HBF-qG-7GH"/>
+                            <constraint firstItem="NWT-Pl-KYn" firstAttribute="leading" secondItem="nvR-t5-tmk" secondAttribute="leadingMargin" id="JXc-zs-cuS"/>
+                            <constraint firstItem="M51-0C-uOX" firstAttribute="top" secondItem="NWT-Pl-KYn" secondAttribute="bottom" constant="22" id="O9R-gg-ux4"/>
+                            <constraint firstItem="NWT-Pl-KYn" firstAttribute="top" secondItem="6Km-E8-g4v" secondAttribute="bottom" id="QLM-Tf-1ez"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gix-KA-5Ib" secondAttribute="trailing" constant="8" id="aHi-Sf-7Cv"/>
+                            <constraint firstItem="M51-0C-uOX" firstAttribute="top" secondItem="6Km-E8-g4v" secondAttribute="bottom" constant="52" id="gzs-ga-aMD"/>
+                            <constraint firstItem="M51-0C-uOX" firstAttribute="centerX" secondItem="NWT-Pl-KYn" secondAttribute="centerX" constant="2.5" id="hhX-KA-nJ4"/>
+                            <constraint firstItem="tV9-jC-que" firstAttribute="top" secondItem="M51-0C-uOX" secondAttribute="bottom" constant="35" id="jH5-dC-o8H"/>
+                            <constraint firstItem="gix-KA-5Ib" firstAttribute="top" secondItem="tV9-jC-que" secondAttribute="bottom" constant="30" id="nEO-3y-6z3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gzs-ga-aMD"/>
+                                <exclude reference="1hN-aW-r0I"/>
+                                <exclude reference="9j7-hj-OTT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="beerCountSlider" destination="M51-0C-uOX" id="hlv-yl-dnQ"/>
+                        <outlet property="resultLabel" destination="gix-KA-5Ib" id="juM-Kq-vwB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kWa-5s-RJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423" y="-285"/>
         </scene>
     </scenes>
 </document>
