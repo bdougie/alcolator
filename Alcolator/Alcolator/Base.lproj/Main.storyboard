@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gvX-mo-ANJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V3U-6t-c4f">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="% Alchohol Content Per Beer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hSQ-3M-PzL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="% Alchohol Content Per Beer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hSQ-3M-PzL">
                                 <rect key="frame" x="16" y="84" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -59,7 +59,7 @@
                             <constraint firstItem="aot-v9-VrR" firstAttribute="top" secondItem="hnl-wU-gTe" secondAttribute="bottom" constant="35" id="9Qi-i0-8v3"/>
                             <constraint firstItem="LqL-yb-bVE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="A78-iI-iN1"/>
                             <constraint firstItem="hSQ-3M-PzL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="B0e-kt-RIP"/>
-                            <constraint firstItem="hSQ-3M-PzL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IoB-od-VIQ"/>
+                            <constraint firstItem="hSQ-3M-PzL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="IoB-od-VIQ"/>
                             <constraint firstItem="hnl-wU-gTe" firstAttribute="top" secondItem="hSQ-3M-PzL" secondAttribute="bottom" constant="22" id="SLb-0q-vhn"/>
                             <constraint firstItem="hnl-wU-gTe" firstAttribute="centerX" secondItem="hSQ-3M-PzL" secondAttribute="centerX" constant="2.5" id="VJX-au-rpW"/>
                             <constraint firstItem="aot-v9-VrR" firstAttribute="centerX" secondItem="hnl-wU-gTe" secondAttribute="centerX" constant="-41.5" id="VkA-cb-AUR"/>
@@ -116,7 +116,7 @@
                                     <action selector="textFieldDidChange:" destination="hdM-2s-e3P" eventType="editingDidEnd" id="wPm-fL-P9s"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tV9-jC-que">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tV9-jC-que">
                                 <rect key="frame" x="270" y="201" width="59" height="30"/>
                                 <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="15"/>
                                 <state key="normal" title="Calculate">
@@ -127,13 +127,13 @@
                                     <action selector="buttonPressed:" destination="hdM-2s-e3P" eventType="touchUpInside" id="6GC-87-8fr"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="M51-0C-uOX">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="M51-0C-uOX">
                                 <rect key="frame" x="14" y="136" width="572" height="31"/>
                                 <connections>
                                     <action selector="sliderDidChange:" destination="hdM-2s-e3P" eventType="valueChanged" id="76x-JL-g4Y"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gix-KA-5Ib">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gix-KA-5Ib">
                                 <rect key="frame" x="37" y="261" width="526" height="19"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
                                 <color key="textColor" red="0.21037214770000001" green="0.53598484850000006" blue="0.43387750050000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -151,7 +151,7 @@
                             <constraint firstItem="gix-KA-5Ib" firstAttribute="leading" secondItem="nvR-t5-tmk" secondAttribute="leadingMargin" constant="21" id="HBF-qG-7GH"/>
                             <constraint firstItem="NWT-Pl-KYn" firstAttribute="leading" secondItem="nvR-t5-tmk" secondAttribute="leadingMargin" id="JXc-zs-cuS"/>
                             <constraint firstItem="M51-0C-uOX" firstAttribute="top" secondItem="NWT-Pl-KYn" secondAttribute="bottom" constant="22" id="O9R-gg-ux4"/>
-                            <constraint firstItem="NWT-Pl-KYn" firstAttribute="top" secondItem="6Km-E8-g4v" secondAttribute="bottom" id="QLM-Tf-1ez"/>
+                            <constraint firstItem="NWT-Pl-KYn" firstAttribute="top" secondItem="6Km-E8-g4v" secondAttribute="bottom" constant="20" id="QLM-Tf-1ez"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gix-KA-5Ib" secondAttribute="trailing" constant="21" id="aHi-Sf-7Cv"/>
                             <constraint firstItem="M51-0C-uOX" firstAttribute="top" secondItem="6Km-E8-g4v" secondAttribute="bottom" constant="52" id="gzs-ga-aMD"/>
                             <constraint firstItem="M51-0C-uOX" firstAttribute="centerX" secondItem="NWT-Pl-KYn" secondAttribute="centerX" id="hhX-KA-nJ4"/>
