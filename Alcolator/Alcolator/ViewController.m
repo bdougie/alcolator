@@ -36,6 +36,7 @@
 - (IBAction)sliderDidChange:(UISlider *)sender {
     NSLog(@"Slider value changed to %f", sender.value);
     [self.beerPercentTextField resignFirstResponder];
+//    [self.navigationItem.title = @"@% (%@ shots)", self.navigationItem, sender.value];
 }
           
 - (IBAction)buttonPressed:(id)sender {
@@ -74,5 +75,6 @@
 - (IBAction)tapGestureDidFire:(UITapGestureRecognizer *)sender {
     [self.beerPercentTextField resignFirstResponder];
 }
+
 
 @end
